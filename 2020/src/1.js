@@ -1,4 +1,7 @@
-const day1Pt1 = (data) => {
+const { readInput } = require('./utils')
+
+const partOne = (rawInput) => {
+    const data = rawInput.split('\n').map(x=>+x)
     let answer = undefined
 
     data.some((amtX) => {
@@ -12,7 +15,8 @@ const day1Pt1 = (data) => {
     return answer
 }
 
-const day1Pt2 = (data) => {
+const partTwo = (rawInput) => {
+    const data = rawInput.split('\n').map(x=>+x)
     let answer = undefined
 
     data.some((amtX) => {
@@ -32,6 +36,12 @@ const day1Pt2 = (data) => {
 }
 
 module.exports = {
-    day1Pt1,
-    day1Pt2
+    partOne,
+    partTwo
+}
+
+if (require.main === module) {
+    const input = readInput('../input/1.txt')
+    console.log('partOne:', partOne(input)) 
+    console.log('partTwo:', partTwo(input)) 
 }
