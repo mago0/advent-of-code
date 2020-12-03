@@ -2,7 +2,6 @@ const path = require('path')
 const fs = require('fs')
 
 const readInput = (filePath) => {
-    console.log(path.join(__dirname, filePath))
     try {
         const dataBuffer = fs.readFileSync(path.join(__dirname, filePath))
         return dataBuffer.toString()
